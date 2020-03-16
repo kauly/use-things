@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useFetch } from "./hooks";
+import { useNativeFetch } from "./hooks";
 
 const url = "https://swapi.co/api/people/1";
 
 const App = () => {
   const [trigger, setTrigger] = useState(false);
-  const [response, loading, error] = useFetch({ trigger, url });
+  const [response, loading, error] = useNativeFetch({ url }, trigger);
 
   useEffect(() => {
     console.log("App -> response, loading, error", response);
